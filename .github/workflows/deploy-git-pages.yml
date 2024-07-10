@@ -5,6 +5,8 @@ name: Node.js Package
 on:
   push
 
+permissions:
+  id-token: write
   
 jobs:
   build-and-deploy:
