@@ -21,6 +21,6 @@ jobs:
       - name: Deploy with gh-pages
         uses: amiguelgh.github.io/video-fsm-tres@4.1.1
         with: 
-          branch: gh-pages
+          branch: main
           folder: build
   
