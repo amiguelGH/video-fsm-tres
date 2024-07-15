@@ -9,10 +9,16 @@ permissions:
   id-token: write
   contents: read
   pages: write
+
   
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  example_matrix:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04]
+        version: [10, 12, 14]
+    runs-on: ${{ matrix.os }}
+    
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
