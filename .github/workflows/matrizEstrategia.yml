@@ -1,0 +1,10 @@
+on:
+  dispatch
+jobs:
+   ReuseableMatrixJobForDeployment:
+     strategy:
+       matrix:
+         target: [dev, stage, prod]
+     uses: amiguelGH/video-fsm-tres/.github/workflows/deploy-git-pages.yml 
+     with:
+       target: ${{ matrix.target }}
