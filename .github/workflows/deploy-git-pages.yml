@@ -47,6 +47,6 @@ jobs:
         uses: actions/deploy-pages@v4
         with: 
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: github-pages-${{ matrix.os }}-${{ matrix.version }}
+          artifact_name: build/github-pages-${{ matrix.os }}-${{ matrix.version }}
           
   
