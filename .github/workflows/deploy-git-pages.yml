@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: github-pages-${{ matrix.os }}-${{ matrix.version }}
-          path: build/*
+          path: build/github-pages-${{ matrix.os }}-${{ matrix.version }}
 
       - name: Deploy with gh-pages
         uses: actions/deploy-pages@v4
