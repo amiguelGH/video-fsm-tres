@@ -16,10 +16,9 @@ jobs:
         version: [10, 12, 14]
         
         include:
-          - os: ${{ matrix.os }}
-          - version : ${{ matrix.version }} 
+          - os_version: ${{ matrix.os }}-${{ matrix.version }} 
             artifact_name: ${{ github.event.repository.name }}
-            asset_name: ${{ github.event.repository.name }}-${{ matrix.os }}-${{ matrix.version }}          
+            asset_name: ${{ github.event.repository.name }}-os_version          
     
     runs-on: ${{ matrix.os }}
        
