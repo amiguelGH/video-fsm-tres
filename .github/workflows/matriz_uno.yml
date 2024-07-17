@@ -1,9 +1,6 @@
 name: Build matriz
 
-on:
-  push:
-    tags:
-      - "*"
+on: [push]
 
 permissions:
   id-token: write
