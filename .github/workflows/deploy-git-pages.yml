@@ -9,8 +9,7 @@ permissions:
 
   
 jobs:
-  example_matrix:
-    strategy:
+   strategy:
       matrix:
         os: [ubuntu-22.04, ubuntu-20.04]
         version: [10, 12, 14]
@@ -20,7 +19,7 @@ jobs:
             artifact_name: ${{ github.event.repository.name }}
             asset_name: ${{ github.event.repository.name }}-os_version          
     
-    runs-on: ${{ matrix.os }}
+   runs-on: ${{ matrix.os }}
        
     steps:
       - name: Checkout Source
