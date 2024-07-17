@@ -1,9 +1,9 @@
-
-
-name: Node.js Package
+name: Release
 
 on:
-  push    # workflow_dispatch
+  push:
+    tags:
+      - "*"
 
 permissions:
   id-token: write
@@ -17,8 +17,15 @@ jobs:
       matrix:
         os: [ubuntu-22.04, ubuntu-20.04]
         version: [10, 12, 14]
-    runs-on: ${{ matrix.os }}
+        
+        include:
+          - os: ${{ matrix.os }}
+          - version : ${{ matrix.version }} 
+            artifact_name: ${{ github.event.repository.name }}
+            asset_name: ${{ github.event.repository.name }}-${{ matrix.os }}-${{ matrix.version }}          
     
+    runs-on: ${{ matrix.os }}
+       
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
