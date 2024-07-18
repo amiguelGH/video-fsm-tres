@@ -1,0 +1,9 @@
+name: Node.js CI - usando accion-base-matriz
+
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  ci:
+    name: run build process
+    uses: amiguelGH/video-fsm-tres/.github/actions/build-node/accion-base-matriz.yml@main
