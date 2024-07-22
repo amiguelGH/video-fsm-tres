@@ -11,5 +11,5 @@ jobs:
         runs-on: ${{ matrix.os }}
     uses: amiguelGH/video-fsm-tres/.github/workflows/deploy-github-pages-base.yml@main
     with:
-      target: ${{ matrix.target }}
+      target: ${{ matrix.version }}
     
