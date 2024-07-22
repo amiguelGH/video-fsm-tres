@@ -3,7 +3,13 @@ on:
   workflow_dispatch:
   push:
 jobs:
-  ci:
-    name: run build process
+  example_matrix:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04]
+        version: [10, 12, 14]
+        runs-on: ${{ matrix.os }}
     uses: amiguelGH/video-fsm-tres/.github/workflows/deploy-github-pages-base.yml@main
-    #YOUR_ORG/GHA.workflows/.github/workflows/gha.workflows.build-node.yml@main
+    with:
+      target: ${{ matrix.target }}
+    
