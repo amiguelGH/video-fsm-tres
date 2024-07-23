@@ -6,8 +6,7 @@ jobs:
   test:
     strategy:
         matrix:
-          number1: [1, 2, 3, 4, 5, 6, 7]
-          number2: [7, 6, 5, 4, 3, 2, 1]
+         os: [ubuntu-latest, windows-latest]
     uses: amiguelGH/video-fsm-tres/.github/workflows/deploy-github-pages-base.yml@main
     with:
-      runner: ubuntu-latest
+      runner: ${{ matrix.os }}
