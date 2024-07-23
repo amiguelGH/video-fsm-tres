@@ -12,5 +12,5 @@ jobs:
         runs-on: ${{ matrix.os }}
     uses: amiguelGH/video-fsm-tres/.github/workflows/deploy-github-pages-base.yml@main
     with:
-      runner: ${{ matrix.os }}
+      runner: ubuntu-22.04
       
