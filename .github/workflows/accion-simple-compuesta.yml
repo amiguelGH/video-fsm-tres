@@ -6,7 +6,7 @@ jobs:
   test:
     strategy:
         matrix:
-         os: [ubuntu-latest, windows-latest]
+         os: [ubuntu-latest]
     uses: amiguelGH/video-fsm-tres/.github/workflows/deploy-github-pages-base.yml@main
     with:
       runner: ${{ matrix.os }}
